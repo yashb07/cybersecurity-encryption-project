@@ -50,10 +50,9 @@ public class imgEnc extends Application{
                 byte []data=new byte[fis.available()];
                 fis.read(data);
                 int i=0;
-                for(byte b:data)
-                {
+                for(byte b:data) {
                     System.out.println(b);
-                    data[i]=(byte)(b^temp);
+                    data[i]=(byte)(b ^ temp); // XOR Cipher
                     i++;
                 }
 
@@ -62,7 +61,6 @@ public class imgEnc extends Application{
                 fos.close();
                 fis.close();
                 JOptionPane.showMessageDialog(null, "Done");
-
             } catch (Exception exception) {
                 exception.printStackTrace();
             }

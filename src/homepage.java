@@ -20,10 +20,10 @@ public class homepage extends Application{
 
         Button text = new Button("Text\nEncryption");
         text.getStyleClass().add("text-btn");
-        gp.add(text, 2, 0);
+        gp.add(text, 1, 0);
         Button image = new Button("Image\nEncryption");
         image.getStyleClass().add("image-btn");
-        gp.add(image, 5, 0);
+        gp.add(image, 2, 0);
 
         text.setOnAction(e -> {
             try {

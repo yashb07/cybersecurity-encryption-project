@@ -52,9 +52,8 @@ public class textEnc extends Application{
                 char xorKey = 'P';
                 String outputString = "";
                 int len = textEnc.length();
-                System.out.println(textEnc);
                 for (int i = 0; i < len; i++)
-                    outputString = outputString + Character.toString((char) (textEnc.charAt(i) ^ xorKey));
+                    outputString += Character.toString((char) (textEnc.charAt(i) ^ xorKey));
 
                 AlertBox.display("XOR Encryption", outputString);
             } catch (Exception exception) {
@@ -66,16 +65,14 @@ public class textEnc extends Application{
             try {
                 String textEnc = text.getText();
                 StringBuffer outputString= new StringBuffer();
-                int s = 4;
+                int s = 1;
                 for (int i=0; i<textEnc.length(); i++) {
                     if (Character.isUpperCase(textEnc.charAt(i))) {
-                        char ch = (char)(((int)textEnc.charAt(i) +
-                                s - 65) % 26 + 65);
+                        char ch = (char)(((int)textEnc.charAt(i) + s - 65) % 26 + 65);
                         outputString.append(ch);
                     }
                     else {
-                        char ch = (char)(((int)textEnc.charAt(i) +
-                                s - 97) % 26 + 97);
+                        char ch = (char)(((int)textEnc.charAt(i) + s - 97) % 26 + 97);
                         outputString.append(ch);
                     }
                 }
@@ -89,7 +86,7 @@ public class textEnc extends Application{
         Affine.setOnAction(e -> {
             try {
                 String textEnc = text.getText();
-                int a = 17;
+                int a = 17; // Coprime
                 int b = 20;
 
                 String outputString = "";
@@ -109,7 +106,7 @@ public class textEnc extends Application{
         OneTime.setOnAction(e -> {
             try {
                 String textEnc = text.getText();
-                String key = textEnc;
+                String key = textEnc; // Should be same length as input string
                 String outputString = "";
                 int cipher[] = new int[key.length()];
 
