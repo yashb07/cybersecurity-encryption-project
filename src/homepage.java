@@ -27,16 +27,16 @@ public class homepage extends Application{
 
         text.setOnAction(e -> {
             try {
-                textEnc adm = new textEnc();
-                adm.start(mainStage);
+                textEnc textEnc = new textEnc();
+                textEnc.start(mainStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
         });
         image.setOnAction(e -> {
             try {
-                imgEnc adm = new imgEnc();
-                adm.start(mainStage);
+                imgEnc imgEnc = new imgEnc();
+                imgEnc.start(mainStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }

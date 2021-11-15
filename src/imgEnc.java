@@ -16,7 +16,7 @@ public class imgEnc extends Application{
         gp.setVgap(25);
         gp.setHgap(10);
         gp.setPadding(new Insets(25, 0, 0, 15));
-        Scene sc = new Scene(gp, 350, 300);
+        Scene sc = new Scene(gp, 400, 300);
 //        sc.getStylesheets().add("style.css");
         mainStage.setResizable(false);
         mainStage.setScene(sc);
@@ -30,10 +30,12 @@ public class imgEnc extends Application{
         key.setPromptText("Enter Image Key:");
         gp.add(key, 1, 1);
 
-        Button imgEnc = new Button("Encrpyt\nDecrypt");
-        gp.add(imgEnc, 1, 2);
         Label info = new Label("Provide Image here");
-        gp.add(info, 2, 2);
+        gp.add(info, 1, 2);
+        Button imgEnc = new Button("Encrpyt\nDecrypt");
+        gp.add(imgEnc, 1, 3);
+        Button Back = new Button("Back");
+        gp.add(Back, 2, 3);
 
         imgEnc.setOnAction(e -> {
             try {
@@ -61,6 +63,15 @@ public class imgEnc extends Application{
                 fis.close();
                 JOptionPane.showMessageDialog(null, "Done");
 
+            } catch (Exception exception) {
+                exception.printStackTrace();
+            }
+        });
+
+        Back.setOnAction(e -> {
+            try {
+                homepage home = new homepage();
+                home.start(mainStage);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
